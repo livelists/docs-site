@@ -6,13 +6,11 @@ const { Title } = Typography;
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 import { useTranslation } from 'hooks/useTranslation';
 
-import styles from './HomePageContainer.module.less';
-
 const HomePageContainer: React.FC = () => {
     const { t } = useTranslation(NS_COMMON);
 
     return (
-        <div className={styles.cont}>
+        <div>
             <Title>
                 {t('homePage')}
             </Title>

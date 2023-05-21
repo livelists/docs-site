@@ -6,8 +6,6 @@ const { Content } = LayoutAnt;
 
 import { useApp } from 'context/AppContext';
 
-import styles from './Layout.module.less';
-
 interface IProps {
     children?: ReactElement | ReactElement[];
 }
@@ -23,12 +21,12 @@ const Layout:React.FC<IProps> = ({
         <LayoutAnt style={{ minHeight: '100vh' }}>
             {appState.isInit ? (
                 <>
-                    <Content className={styles.content}>
+                    <Content>
                         {children}
                     </Content>
                 </>
             ):(
-                <div className={styles.loaderCont}>
+                <div>
                     <Spin />
                 </div>
             )}

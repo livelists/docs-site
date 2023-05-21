@@ -1,0 +1,15 @@
+version: "3.6"
+
+services:
+  web-client:
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "13000:3000"
+
+networks:
+  default:
+    external:
+      name: docs-site

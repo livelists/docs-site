@@ -1,5 +1,4 @@
 require('dotenv').config();
-const withLess = require("next-with-less");
 const { i18n } = require('./next-i18next.config');
 
 const publicRuntimeConfig = {
@@ -14,10 +13,7 @@ const nextConfig = {
   i18n
 }
 
-module.exports = withLess({
+module.exports = {
   ...nextConfig,
   publicRuntimeConfig,
-  lessLoaderOptions: {
-    /* ... */
-  }
-});
+};

@@ -1,16 +1,15 @@
-import React, {
-    useState,
-    createContext,
-    useContext,
-    ReactElement,
-    useEffect,
-} from 'react';
+import React, { createContext, ReactElement, useContext, useEffect, useState, } from 'react';
 
-import { getUserLocale } from 'get-user-locale';
+import randomstring from 'randomstring';
 
 import { IAppState } from 'types/app';
 
-import { AppLanguages } from '../const/app/AppLanguages';
+import { RequestMethods, RequestStatuses } from '../const/http';
+import { useRequest } from '../hooks/useRequest';
+import { getLocalStorageItem } from '../utils/helpers/localStorage/getLocalStorageItem';
+import { setLocalStorageItem } from '../utils/helpers/localStorage/setLocalStorageItem';
+
+const TOKEN_STORAGE_ITEM = 'token';
 
 
 interface IContext {
@@ -28,24 +27,63 @@ export const AppProvider = (props: PropsInterface) => {
     const { children } = props;
     const [appState, setAppState] = useState<IAppState>({
         isInit: false,
-        language: AppLanguages.English,
+        accessToken: ''
+    });
+
+    const {
+        onRequest: onGetAccessTokenReq,
+        state: getAccessTokenRes,
+    } = useRequest({
+        url: 'http://localhost:3002/me',
+        method: RequestMethods.Get,
+    });
+
+    const {
+        onRequest: onCreateUserReq,
+        state: createUserRes,
+    } = useRequest({
+        url: 'http://localhost:3002/me',
+        method: RequestMethods.Post,
     });
 
     useEffect(() => {
-        const myLanguage = getUserLocale();
-        const languageSplit = myLanguage.split('-');
-        if (languageSplit[0] === 'ru') {
-            setAppState({
-                isInit: true,
-                language: AppLanguages.Russian,
+        const tokenStr = getLocalStorageItem(TOKEN_STORAGE_ITEM);
+
+        if (tokenStr) {
+            onGetAccessTokenReq({
+                params: {
+                    token: tokenStr,
+                }
             });
         } else {
-            setAppState({
-                isInit: true,
-                language: AppLanguages.English,
+            const newTokenStr = randomstring.generate(12);
+            setLocalStorageItem(TOKEN_STORAGE_ITEM, newTokenStr);
+            onCreateUserReq({
+                params: {
+                    token: tokenStr,
+                }
             });
         }
     }, []);
+
+    useEffect(() => {
+        if (getAccessTokenRes.status === RequestStatuses.Succeeded) {
+            console.log('setState');
+            setAppState({
+                isInit: true,
+                accessToken: getAccessTokenRes.result.accessToken,
+            });
+        }
+    }, [getAccessTokenRes.status]);
+
+    useEffect(() => {
+        if (createUserRes.status === RequestStatuses.Succeeded) {
+            setAppState({
+                isInit: true,
+                accessToken: createUserRes.result.accessToken,
+            });
+        }
+    }, [createUserRes.status]);
 
     return (
         <AppContext.Provider

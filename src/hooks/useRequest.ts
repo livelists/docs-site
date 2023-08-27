@@ -124,7 +124,7 @@ export const useRequest = ({ url, method, withAbort, formatData }: IOptions) => 
                 if (e?.name !== 'AbortError') {
                     let status = RequestStatuses.Failed;
 
-                    if (e[0]?.statusCode === 401) {
+                    if (e?.[0]?.statusCode === 401) {
                         status = RequestStatuses.Unauthorized;
                     }
 

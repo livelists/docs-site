@@ -1,22 +1,9 @@
 import React from 'react';
 
-import { Typography, Divider } from 'antd';
-const { Title } = Typography;
+import { HomePage } from '../../components/HomePage';
 
-import { NS_COMMON } from 'const/app/I18_NAMESPACES';
-import { useTranslation } from 'hooks/useTranslation';
-
-const HomePageContainer: React.FC = () => {
-    const { t } = useTranslation(NS_COMMON);
-
+export default function SimpleSidebar() {
     return (
-        <div>
-            <Title>
-                {t('homePage')}
-            </Title>
-            <Divider />
-        </div>
+        <HomePage />
     );
-};
-
-export default React.memo(HomePageContainer);
+}

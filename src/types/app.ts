@@ -1,6 +1,4 @@
-import { AppLanguages } from 'const/app/AppLanguages';
-
 export interface IAppState {
-    language: AppLanguages,
+    accessToken: string,
     isInit: boolean,
 }

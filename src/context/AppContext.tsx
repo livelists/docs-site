@@ -34,7 +34,7 @@ export const AppProvider = (props: PropsInterface) => {
         onRequest: onGetAccessTokenReq,
         state: getAccessTokenRes,
     } = useRequest({
-        url: 'http://localhost:3002/me',
+        url: 'https://livelists.tech/me',
         method: RequestMethods.Get,
     });
 
@@ -42,7 +42,7 @@ export const AppProvider = (props: PropsInterface) => {
         onRequest: onCreateUserReq,
         state: createUserRes,
     } = useRequest({
-        url: 'http://localhost:3002/me',
+        url: 'https://livelists.tech/me',
         method: RequestMethods.Post,
     });
 

@@ -28,6 +28,12 @@ services:
       - "17771:7771"
       - "18080:8080"
 
+  backend:
+    image: nikrainev/docs-site-backend:latest
+    restart: always
+    ports:
+      - "13000:3000"
+
 networks:
   default:
     external:

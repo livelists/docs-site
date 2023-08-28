@@ -11,7 +11,6 @@ import { setLocalStorageItem } from '../utils/helpers/localStorage/setLocalStora
 
 const TOKEN_STORAGE_ITEM = 'token';
 
-
 interface IContext {
     appState: IAppState,
 }

@@ -9,6 +9,25 @@ services:
     ports:
       - "13000:3000"
 
+  mongo-livelists:
+    image: mongo:6.0.3
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all" ]
+    expose:
+      - 27017
+    ports:
+      - "57217:27017"
+
+  livelists-server:
+    image: nikrainev/livelists-server:0.1.5
+    restart: always
+    command: livelists-server
+    volumes:
+      - /home/livelists/config.yaml:/config.yaml
+    ports:
+      - "17771:7771"
+      - "18080:8080"
+
 networks:
   default:
     external:

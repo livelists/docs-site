@@ -32,7 +32,7 @@ services:
     image: nikrainev/docs-site-backend:latest
     restart: always
     ports:
-      - "13010:3000"
+      - "13010:3002"
 
 networks:
   default:

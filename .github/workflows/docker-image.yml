@@ -10,7 +10,7 @@ jobs:
 
   build:
 
-    runs-on: self-hosted
+    runs-on: docs-site
 
     steps:
       - uses: actions/checkout@v3

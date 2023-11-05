@@ -23,7 +23,7 @@ services:
     restart: always
     command: livelists-server
     volumes:
-      - /home/livelists/config.yaml:/config.yaml
+      - /home/livelists/config.yaml:/pkg/config/config.yaml
     ports:
       - "17771:7771"
       - "18080:8080"

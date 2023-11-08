@@ -8,6 +8,7 @@ import { RequestMethods, RequestStatuses } from '../const/http';
 import { useRequest } from '../hooks/useRequest';
 import { getLocalStorageItem } from '../utils/helpers/localStorage/getLocalStorageItem';
 import { setLocalStorageItem } from '../utils/helpers/localStorage/setLocalStorageItem';
+import {BASE_API_URL} from "../const/http/BaseApiUrl";
 
 const TOKEN_STORAGE_ITEM = 'token';
 
@@ -33,7 +34,7 @@ export const AppProvider = (props: PropsInterface) => {
         onRequest: onGetAccessTokenReq,
         state: getAccessTokenRes,
     } = useRequest({
-        url: 'https://livelists.tech/me',
+        url: `${BASE_API_URL}/me`,
         method: RequestMethods.Get,
     });
 
@@ -41,7 +42,7 @@ export const AppProvider = (props: PropsInterface) => {
         onRequest: onCreateUserReq,
         state: createUserRes,
     } = useRequest({
-        url: 'https://livelists.tech/me',
+        url: `${BASE_API_URL}/me`,
         method: RequestMethods.Post,
     });
 
@@ -49,6 +50,7 @@ export const AppProvider = (props: PropsInterface) => {
         const tokenStr = getLocalStorageItem(TOKEN_STORAGE_ITEM);
 
         if (tokenStr) {
+            console.log('get access token');
             onGetAccessTokenReq({
                 params: {
                     token: tokenStr,
@@ -67,7 +69,6 @@ export const AppProvider = (props: PropsInterface) => {
 
     useEffect(() => {
         if (getAccessTokenRes.status === RequestStatuses.Succeeded) {
-            console.log('setState');
             setAppState({
                 isInit: true,
                 accessToken: getAccessTokenRes.result.accessToken,
@@ -83,6 +84,11 @@ export const AppProvider = (props: PropsInterface) => {
             });
         }
     }, [createUserRes.status]);
+
+
+    useEffect(() => {
+        console.log('init double');
+    }, []);
 
     return (
         <AppContext.Provider

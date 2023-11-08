@@ -9,7 +9,7 @@ const publicRuntimeConfig = {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   i18n,
   eslint: {
     // Warning: This allows production builds to successfully complete even if

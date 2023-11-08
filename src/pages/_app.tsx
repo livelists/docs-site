@@ -10,12 +10,12 @@ import AppContextProvider from 'components/Providers/AppContextProvider';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <AppContextProvider>
-            <ChakraProvider>
+        <ChakraProvider>
+            <AppContextProvider>
                 <Component {...pageProps} />
-            </ChakraProvider>
-        </AppContextProvider>
+            </AppContextProvider>
+        </ChakraProvider>
     );
 }
 
-export default appWithTranslation(MyApp);
+export default React.memo(appWithTranslation(MyApp));

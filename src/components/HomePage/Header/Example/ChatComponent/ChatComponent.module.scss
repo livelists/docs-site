@@ -1,7 +1,11 @@
 .cont {
   width: 100%;
   flex-shrink: 1;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 700px;
 }
 
 .list {

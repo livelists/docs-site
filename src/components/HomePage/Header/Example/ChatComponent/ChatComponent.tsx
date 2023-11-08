@@ -8,6 +8,7 @@ import {
     HistoryMessages,
     RecentMessages,
     ChatInput,
+    ChannelContent,
 } from 'livelists-react-sdk';
 
 import styles from './ChatComponent.module.scss';
@@ -50,23 +51,25 @@ const ChatComponent:React.FC<IProps> = ({
     }
 
     return (
-        <div className={styles.cont}>
-            <MessagesList
-                onLoadMore={loadMoreMessages}
-                isLoadingMore={isLoadingHistory}
-                className={styles.list}
-                scrollToBottomKey={scrollToBottomKey}
-            >
-                <HistoryMessages messages={historyMessages} />
-                <RecentMessages messages={recentMessages} />
-            </MessagesList>
-            <ChatInput
-                placeholder="Type something..."
-                onSubmit={({ value }) => value ? publishMessage({
-                    text: value,
-                }) : undefined}
-            />
-        </div>
+        <ChannelContent>
+            <div className={styles.cont}>
+                <MessagesList
+                    onLoadMore={loadMoreMessages}
+                    isLoadingMore={isLoadingHistory}
+                    className={styles.list}
+                    scrollToBottomKey={scrollToBottomKey}
+                >
+                    <HistoryMessages messages={historyMessages} />
+                    <RecentMessages messages={recentMessages} />
+                </MessagesList>
+                <ChatInput
+                    placeholder="Type something..."
+                    onSubmit={({ value }) => value ? publishMessage({
+                        text: value,
+                    }) : undefined}
+                />
+            </div>
+        </ChannelContent>
     );
 };
 

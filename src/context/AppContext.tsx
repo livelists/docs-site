@@ -59,7 +59,7 @@ export const AppProvider = (props: PropsInterface) => {
             setLocalStorageItem(TOKEN_STORAGE_ITEM, newTokenStr);
             onCreateUserReq({
                 params: {
-                    token: tokenStr,
+                    token: newTokenStr,
                 }
             });
         }

@@ -3,7 +3,10 @@ import React from 'react';
 import {
     Avatar,
     Text,
+    Link,
 } from '@chakra-ui/react';
+
+import { MAINTAINER_URL } from 'const/http/MAINTAINER_URL';
 
 import styles from './MaintainerBlock.module.scss';
 
@@ -17,11 +20,16 @@ export const MaintainerBlock = () => {
             className={styles.cont}
         >
             <Avatar
-                src={'../../../../public/img/avatar.png'}
+                src={'/img/avatar.png'}
             />
-            <Text>
-                Maintainer
-            </Text>
+            <Link
+                target='_blank'
+                href={MAINTAINER_URL}
+            >
+                <Text>
+                    Maintainer
+                </Text>
+            </Link>
         </div>
     );
 };

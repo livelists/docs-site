@@ -101,47 +101,52 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             w={{ base: 'full', md: 60 }}
             pos="fixed"
             h="full"
-            {...rest}>
-            <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-                <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-                    LiveLists
-                </Text>
-                <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
-            </Flex>
-            {MainNavItems.map((link) => (
-                <NavItem
-                    href={link.href}
-                    key={link.name}
-                    icon={link.icon}
-                >
-                    {link.name}
-                </NavItem>
-            ))}
-            <Heading as='h5' size='sm' className={styles.navGroup}>
-                {t('menuItems.clientSDK')}
-            </Heading>
-            {ClientSDKs.map((link) => (
-                <NavItem
-                    href={link.href}
-                    key={link.name}
-                    icon={link.icon}
-                >
-                    {link.name}
-                </NavItem>
-            ))}
-            <Heading as='h5' size='sm' className={styles.navGroup}>
-                {t('menuItems.backendSDK')}
-            </Heading>
-            {ServerSDKs.map((link) => (
-                <NavItem
-                    href={link.href}
-                    key={link.name}
-                    icon={link.icon}
-                >
-                    {link.name}
-                </NavItem>
-            ))}
-            <MaintainerBlock />
+            {...rest}
+        >
+            <div className={styles.content}>
+                <div className={styles.menuItems}>
+                    <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+                        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+                            LiveLists
+                        </Text>
+                        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+                    </Flex>
+                    {MainNavItems.map((link) => (
+                        <NavItem
+                            href={link.href}
+                            key={link.name}
+                            icon={link.icon}
+                        >
+                            {link.name}
+                        </NavItem>
+                    ))}
+                    <Heading as='h5' size='sm' className={styles.navGroup}>
+                        {t('menuItems.clientSDK')}
+                    </Heading>
+                    {ClientSDKs.map((link) => (
+                        <NavItem
+                            href={link.href}
+                            key={link.name}
+                            icon={link.icon}
+                        >
+                            {link.name}
+                        </NavItem>
+                    ))}
+                    <Heading as='h5' size='sm' className={styles.navGroup}>
+                        {t('menuItems.backendSDK')}
+                    </Heading>
+                    {ServerSDKs.map((link) => (
+                        <NavItem
+                            href={link.href}
+                            key={link.name}
+                            icon={link.icon}
+                        >
+                            {link.name}
+                        </NavItem>
+                    ))}
+                </div>
+                <MaintainerBlock />
+            </div>
         </Box>
     );
 };

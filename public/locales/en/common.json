@@ -1,3 +1,7 @@
 {
   "homePage": "Livelists docs",
+  "menuItems": {
+    "clientSDK": "Client SDK",
+    "backendSDK": "Backend SDK"
+  }
 }

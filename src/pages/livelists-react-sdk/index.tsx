@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Layout } from 'components/Common/Layout';
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 
-const Home: NextPage = () => {
+const ReactSDKage: NextPage = () => {
     return (
         <Layout>
             <div>
@@ -27,4 +27,4 @@ export const getServerSideProps = async ({ locale }: NextPageContext) => {
     });
 };
 
-export default Home;
+export default ReactSDKage;

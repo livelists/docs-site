@@ -6,11 +6,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Layout } from 'components/Common/Layout';
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 
-const NodeJsPage: NextPage = () => {
+const DeployPage: NextPage = () => {
     return (
         <Layout>
             <div>
-                LiveLists node js
+                Deploy
             </div>
         </Layout>
     );
@@ -27,4 +27,4 @@ export const getServerSideProps = async ({ locale }: NextPageContext) => {
     });
 };
 
-export default NodeJsPage;
+export default DeployPage;

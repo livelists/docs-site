@@ -50,7 +50,6 @@ export const AppProvider = (props: PropsInterface) => {
         const tokenStr = getLocalStorageItem(TOKEN_STORAGE_ITEM);
 
         if (tokenStr) {
-            console.log('get access token');
             onGetAccessTokenReq({
                 params: {
                     token: tokenStr,

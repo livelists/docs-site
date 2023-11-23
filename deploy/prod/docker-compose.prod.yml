@@ -12,7 +12,9 @@ services:
   mongo-livelists:
     image: mongo:6.0.3
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all" ]
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--auth" ]
+    volumes:
+      - /etc/mongodbdata/:/data/db
     expose:
       - 27017
     ports:

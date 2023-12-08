@@ -31,6 +31,9 @@ const ChatComponent:React.FC<IProps> = ({
         isLoadingHistory,
         loadMoreMessages,
         scrollToBottomKey,
+        initialScroll,
+        readMessage,
+        onFindFirstNotSeen,
     } = useChannel({
         channelId: selectedChannelId,
         wsConnector,
@@ -58,8 +61,13 @@ const ChatComponent:React.FC<IProps> = ({
                     isLoadingMore={isLoadingHistory}
                     className={styles.list}
                     scrollToBottomKey={scrollToBottomKey}
+                    initialScroll={initialScroll}
                 >
-                    <HistoryMessages messages={historyMessages} />
+                    <HistoryMessages
+                        messages={historyMessages}
+                        readMessage={readMessage}
+                        onFindFirstNotSeen={onFindFirstNotSeen}
+                    />
                     <RecentMessages messages={recentMessages} />
                 </MessagesList>
                 <ChatInput

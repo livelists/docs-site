@@ -34,6 +34,7 @@ const Messenger:React.FC<IProps> = ({
         loadMoreMessages,
         scrollToBottomKey,
         readMessage,
+        initialScroll,
     } = useChannel({
         channelId,
         wsConnector: wsRef,
@@ -63,6 +64,7 @@ const Messenger:React.FC<IProps> = ({
         <div className={styles.content}>
             <ChannelInfo />
             <MessagesList
+                initialScroll={initialScroll}
                 onLoadMore={loadMoreMessages}
                 isLoadingMore={isLoadingHistory}
                 scrollToBottomKey={scrollToBottomKey}
@@ -72,7 +74,6 @@ const Messenger:React.FC<IProps> = ({
                     messages={historyMessages}
                 />
                 <RecentMessages
-                    readMessage={readMessage}
                     messages={recentMessages}
                 />
             </MessagesList>

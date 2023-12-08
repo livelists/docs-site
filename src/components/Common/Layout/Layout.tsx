@@ -1,9 +1,6 @@
 import React, { ReactElement } from 'react';
 
 // eslint-disable-next-line import/order
-import { Layout as LayoutAnt } from 'antd';
-
-const { Content } = LayoutAnt;
 // eslint-disable-next-line import/order
 import {
     Box,
@@ -20,16 +17,16 @@ const Layout:React.FC<IProps> = ({
     children,
 }) => {
     return (
-        <LayoutAnt style={{ minHeight: '100vh' }}>
+        <div>
             <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
                 <SideBar />
                 <Box ml={{ base: 0, md: 60 }} p="4">
-                    <Content>
+                    <div>
                         {children}
-                    </Content>
+                    </div>
                 </Box>
             </Box>
-        </LayoutAnt>
+        </div>
     );
 };
 

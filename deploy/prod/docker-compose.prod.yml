@@ -21,7 +21,7 @@ services:
       - "57217:27017"
 
   livelists-server:
-    image: nikrainev/livelists-server:0.1.6-t
+    image: nikrainev/livelists-server:0.2.1
     restart: always
     command: livelists-server
     volumes:

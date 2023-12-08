@@ -4,6 +4,7 @@ import { Card, CardBody } from '@chakra-ui/react';
 
 import { Header } from './Header';
 import styles from './HomePage.module.scss';
+import { MessengerBlock } from './MessengerBlock';
 
 const HomePage:React.FC = () => {
     return (
@@ -12,6 +13,7 @@ const HomePage:React.FC = () => {
                 className={styles.card}
             >
                 <Header />
+                <MessengerBlock />
             </CardBody>
         </Card>
     );

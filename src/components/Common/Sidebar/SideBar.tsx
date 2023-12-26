@@ -21,7 +21,9 @@ import {
 // eslint-disable-next-line import/named
 import { IconType } from 'react-icons';
 import { FiHome, FiMenu } from 'react-icons/fi';
-import { GrJs, GrReactjs, GrNode, GrServer } from 'react-icons/gr';
+import { GrReactjs, GrNode, GrServers } from 'react-icons/gr';
+import { IoLogoJavascript } from 'react-icons/io5';
+import { AiOutlineCloudServer } from "react-icons/ai";
 
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 import {
@@ -78,7 +80,7 @@ const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
 
 const MainNavItems: Array<LinkItemProps> = [
     { name: 'Home', icon: FiHome, href: HOME_PAGE },
-    { name: 'Deploy', icon: GrServer, href: DEPLOY_PAGE },
+    { name: 'Deploy', icon: AiOutlineCloudServer, href: DEPLOY_PAGE },
 ];
 
 const ServerSDKs: Array<LinkItemProps> = [
@@ -86,7 +88,7 @@ const ServerSDKs: Array<LinkItemProps> = [
 ];
 
 const ClientSDKs: Array<LinkItemProps> = [
-    { name: 'Livelists-js-core', icon: GrJs, href: JS_CORE_PAGE },
+    { name: 'Livelists-js-core', icon: IoLogoJavascript, href: JS_CORE_PAGE },
     { name: 'Livelists-react-sdk', icon: GrReactjs, href: REACT_SDK_PAGE },
 ];
 

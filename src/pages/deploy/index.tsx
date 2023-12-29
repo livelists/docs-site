@@ -4,14 +4,13 @@ import type { NextPage, NextPageContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Layout } from 'components/Common/Layout';
+import { Deploy } from 'components/Docs/Deploy';
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 
 const DeployPage: NextPage = () => {
     return (
         <Layout>
-            <div>
-                Deploy
-            </div>
+            <Deploy />
         </Layout>
     );
 };

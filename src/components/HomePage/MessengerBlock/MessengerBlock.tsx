@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Text } from '@chakra-ui/react';
+import { Button, Text } from '@chakra-ui/react';
 import Image from 'next/image';
+import { AiOutlineFileText } from 'react-icons/ai';
 
 import MessengerImage from '../../../../public/img/messenger.png';
 import styles from './MessengerBlock.module.scss';
@@ -22,9 +23,16 @@ const MessengerBlock:React.FC = () => {
                     className={styles.text}
                     fontSize='2xl'
                 >
-                    Use SDK for client and server together with a self-hosted server to speed up
-                    real-time application development
+                    Using flexible client code you can create a full-fledged chat system integrated into
+                    your application
                 </Text>
+                <Button
+                    className={styles.getStartedButton}
+                    rightIcon={<AiOutlineFileText />}
+                    colorScheme='messenger'
+                >
+                    Read docs
+                </Button>
             </div>
         </div>
     );

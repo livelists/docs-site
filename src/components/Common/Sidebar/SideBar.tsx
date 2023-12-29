@@ -20,10 +20,10 @@ import {
 } from '@chakra-ui/react';
 // eslint-disable-next-line import/named
 import { IconType } from 'react-icons';
+import { AiOutlineCloudServer } from 'react-icons/ai';
 import { FiHome, FiMenu } from 'react-icons/fi';
-import { GrReactjs, GrNode, GrServers } from 'react-icons/gr';
+import { GrReactjs, GrNode } from 'react-icons/gr';
 import { IoLogoJavascript } from 'react-icons/io5';
-import { AiOutlineCloudServer } from "react-icons/ai";
 
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 import {

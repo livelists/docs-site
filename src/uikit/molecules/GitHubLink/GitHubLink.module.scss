@@ -1,0 +1,30 @@
+.cont {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #333;
+  width: fit-content;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+
+  &:hover {
+    background: #6e5494;
+    text-decoration: none !important;
+  }
+}
+
+.iconCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+.text {
+  color: #ffffff;
+}
+
+.icon {
+  color: #ffffff;
+}

@@ -4,14 +4,13 @@ import type { NextPage, NextPageContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Layout } from 'components/Common/Layout';
+import { NodeJSSDK } from 'components/Docs/NodeJSSDK';
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 
 const NodeJsPage: NextPage = () => {
     return (
         <Layout>
-            <div>
-                LiveLists node js
-            </div>
+            <NodeJSSDK />
         </Layout>
     );
 };

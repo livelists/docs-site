@@ -4,14 +4,13 @@ import type { NextPage, NextPageContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Layout } from 'components/Common/Layout';
+import { JSCore } from 'components/Docs/JSCore';
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 
 const JsCorePage: NextPage = () => {
     return (
         <Layout>
-            <div>
-                LiveLists js core
-            </div>
+            <JSCore />
         </Layout>
     );
 };

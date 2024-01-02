@@ -4,14 +4,13 @@ import type { NextPage, NextPageContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Layout } from 'components/Common/Layout';
+import { HooksSDK } from 'components/Docs/ReactSDK/HooksSDK';
 import { NS_COMMON } from 'const/app/I18_NAMESPACES';
 
-import { ReactSDK } from '../../components/Docs/ReactSDK';
-
-const ReactSDKPage: NextPage = () => {
+const HooksSDKPage: NextPage = () => {
     return (
         <Layout>
-            <ReactSDK />
+            <HooksSDK />
         </Layout>
     );
 };
@@ -27,4 +26,4 @@ export const getServerSideProps = async ({ locale }: NextPageContext) => {
     });
 };
 
-export default ReactSDKPage;
+export default HooksSDKPage;

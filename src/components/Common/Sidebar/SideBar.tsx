@@ -10,9 +10,7 @@ import {
     Flex,
     // eslint-disable-next-line import/named
     FlexProps,
-    Icon,
     IconButton,
-    Link,
     Text,
     Heading,
     useColorModeValue,
@@ -30,53 +28,18 @@ import {
     DEPLOY_PAGE,
     HOME_PAGE,
     JS_CORE_PAGE,
-    NODE_JS_PAGE,
+    NODE_JS_PAGE, REACT_SDK_COMPONENTS_PAGE, REACT_SDK_HOOKS_PAGE,
     REACT_SDK_PAGE,
 } from 'const/http/CLIENT_URLS';
 import { useTranslation } from 'hooks/useTranslation';
 
 import { MaintainerBlock } from './MaintainerBlock';
+import { NavItem } from './NavItem';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps extends BoxProps {
     onClose: () => void;
 }
-
-interface NavItemProps extends FlexProps {
-    icon: IconType;
-    children: string;
-    href: string;
-}
-const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
-    return (
-        <Link href={href} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
-            <Flex
-                align="center"
-                p="4"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                    bg: 'cyan.400',
-                    color: 'white',
-                }}
-                {...rest}>
-                {icon && (
-                    <Icon
-                        mr="4"
-                        fontSize="16"
-                        _groupHover={{
-                            color: 'white',
-                        }}
-                        as={icon}
-                    />
-                )}
-                {children}
-            </Flex>
-        </Link>
-    );
-};
 
 const MainNavItems: Array<LinkItemProps> = [
     { name: 'Home', icon: FiHome, href: HOME_PAGE },
@@ -89,7 +52,18 @@ const ServerSDKs: Array<LinkItemProps> = [
 
 const ClientSDKs: Array<LinkItemProps> = [
     { name: 'Livelists-js-core', icon: IoLogoJavascript, href: JS_CORE_PAGE },
-    { name: 'Livelists-react-sdk', icon: GrReactjs, href: REACT_SDK_PAGE },
+    {
+        name: 'Livelists-react-sdk',
+        icon: GrReactjs,
+        href: REACT_SDK_PAGE,
+        subItems: [{
+            name: 'Components',
+            href: REACT_SDK_COMPONENTS_PAGE,
+        },{
+            name: 'Hooks',
+            href: REACT_SDK_HOOKS_PAGE,
+        }]
+    },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -130,6 +104,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                             href={link.href}
                             key={link.name}
                             icon={link.icon}
+                            subItems={link.subItems}
                         >
                             {link.name}
                         </NavItem>
@@ -186,6 +161,10 @@ interface LinkItemProps {
     name: string;
     icon: IconType;
     href: string;
+    subItems?: {
+        name: string,
+        href: string,
+    }[]
 }
 
 export const SideBar = () => {

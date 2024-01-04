@@ -28,7 +28,7 @@ services:
       - /home/livelists/config.yaml:/pkg/config/config.yaml
     ports:
       - "17771:7771"
-      - "18080:8080"
+      - "17772:7772"
 
   backend:
     image: nikrainev/docs-site-backend:latest

@@ -12,7 +12,7 @@ const ComponentsSDK:React.FC = () => {
             <Heading as='h2' size='2xl' id='heading'>
                 React.JS Components
             </Heading>
-            
+
             <Heading as='h3' size='lg' id='avatar'>
                 Avatar
             </Heading>

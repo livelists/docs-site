@@ -1,5 +1,28 @@
-.cont {
+.code {
   width: 100%;
   padding: 10px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #545454;
+  white-space:pre-wrap;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: #272822;
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.infoCont {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7px 20px;
+  gap: 15px;
 }

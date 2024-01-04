@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/themes/prism-funky.css';
 
 import AppContextProvider from 'components/Providers/AppContextProvider';
 

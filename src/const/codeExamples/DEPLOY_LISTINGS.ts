@@ -1,7 +1,6 @@
-version: "3.6"
-
-services:
-  web-client:
+export const DOCKER_COMPOSE_LISTING = `version: "3.6"
+services: 
+web-client:
     build:
       context: ../../
       dockerfile: Dockerfile
@@ -21,22 +20,17 @@ services:
       - "57217:27017"
 
   livelists-server:
-    image: nikrainev/livelists-server:0.3.0
+    image: nikrainev/livelists-server:0.2.1
     restart: always
     command: livelists-server
     volumes:
       - /home/livelists/config.yaml:/pkg/config/config.yaml
     ports:
       - "17771:7771"
-      - "18080:8080"
+      - "17772:7772"
 
   backend:
     image: nikrainev/docs-site-backend:latest
     restart: always
     ports:
-      - "13010:3002"
-
-networks:
-  default:
-    external:
-      name: docs-site
+      - "13010:3002"`;

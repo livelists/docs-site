@@ -2,15 +2,17 @@ import React from 'react';
 
 import { Heading, Text } from '@chakra-ui/react';
 
+import { DOCKER_COMPOSE_LISTING } from 'const/codeExamples/DEPLOY_LISTINGS';
+import { LIVELISTS_CONFIG } from 'const/codeExamples/LIVELISTS_CONFIG';
+import { NGINX_LIVELISTS_PROXY } from 'const/codeExamples/NGINX_LIVELISTS_PROXY';
 import { LIVE_LISTS_SERVER_IMAGE } from 'const/repositories/DOCKER_HUB';
 import { LIVE_LISTS_SERVER } from 'const/repositories/GITHUB_REPOSITORIES';
 import { DockerHubLink } from 'uikit/molecules/DockerHubLink';
 import { GitHubLink } from 'uikit/molecules/GitHubLink';
+import { ProgramCode } from 'uikit/molecules/ProgramCode';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
 
-import { ProgramCode } from '../../../uikit/molecules/ProgramCode';
 import styles from './Deploy.module.scss';
-import { DOCKER_COMPOSE_LISTING } from '../../../const/codeExamples/DEPLOY_LISTINGS';
 
 const Deploy:React.FC = () => {
     return (
@@ -67,6 +69,18 @@ const Deploy:React.FC = () => {
                 codeStr={DOCKER_COMPOSE_LISTING}
                 language='yaml'
                 fileName='docker-compose.yaml'
+            />
+
+            <ProgramCode
+                codeStr={LIVELISTS_CONFIG}
+                language='yaml'
+                fileName='config.yaml'
+            />
+
+            <ProgramCode
+                codeStr={NGINX_LIVELISTS_PROXY}
+                language='nginx'
+                fileName='default'
             />
         </ContentWithNav>
     );

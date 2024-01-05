@@ -48,7 +48,6 @@ export const AppProvider = (props: PropsInterface) => {
 
     useEffect(() => {
         const tokenStr = getLocalStorageItem(TOKEN_STORAGE_ITEM);
-
         if (tokenStr) {
             onGetAccessTokenReq({
                 params: {
@@ -83,11 +82,6 @@ export const AppProvider = (props: PropsInterface) => {
             });
         }
     }, [createUserRes.status]);
-
-
-    useEffect(() => {
-        console.log('init double');
-    }, []);
 
     return (
         <AppContext.Provider

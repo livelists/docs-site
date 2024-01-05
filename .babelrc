@@ -2,7 +2,7 @@
   "presets": ["next/babel"],
   "plugins": [
     ["prismjs", {
-      "languages": ["javascript", "css", "markup", "yaml", "typescript", "ts"],
+      "languages": ["javascript", "css", "markup", "yaml", "typescript", "ts", "nginx"],
       "plugins": ["line-numbers", "normalize-whitespace"],
       "theme": "okaidia",
       "css": true

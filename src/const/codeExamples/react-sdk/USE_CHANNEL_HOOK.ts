@@ -1,0 +1,25 @@
+export const USE_CHANNEL_HOOK = `const {
+    join,
+    publishMessage,
+    recentMessages,
+    historyMessages,
+    connectionState,
+    isLoadingHistory,
+    loadMoreMessages,
+    scrollToBottomKey,
+    initialScroll,
+    readMessage,
+    onFindFirstNotSeen,
+    subscribe,
+    publishEvent,
+    onSubscribeEvent,
+    unSubscribeEvent,
+    notSeenCount,
+    channelInfo,
+} = useChannel({
+    channelId: selectedChannelId,
+    wsConnector,
+    initialPageSize: 1,
+    initialOffset: 20,
+});
+`;

@@ -14,21 +14,16 @@ interface IProps {
 const Example:React.FC<IProps> = ({
     accessToken,
 }) => {
-    const [ws, setWs] = useState<WSConnector | null>(null);
-
     const {
         onGetConnection,
+        ws,
     } = useWsConnection({
         url: 'wss://livelists.tech/livelists-ws/',
         accessToken,
     });
     
     useEffect(() => {
-        const handleGetConnection = async () => {
-            const wsConnection = (await onGetConnection()).current;
-            setWs(wsConnection);
-        };
-        handleGetConnection();
+        onGetConnection();
     }, []);
 
     return (

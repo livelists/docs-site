@@ -13,6 +13,8 @@ import { ProgramCode } from 'uikit/molecules/ProgramCode';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
 
 import styles from './Deploy.module.scss';
+import { CLIENTS_INIT } from '../../../const/codeExamples/server-sdk/CLIENTS_INIT';
+import { WEB_CLIENT_CONNECT } from '../../../const/codeExamples/WEB_CLIENT_CONNECT';
 
 const Deploy:React.FC = () => {
     return (
@@ -62,7 +64,7 @@ const Deploy:React.FC = () => {
                 For the server to work, you must also have access to MongoDB instance.
             </Text>
             <br />
-            <Heading as='h4' size='md'>
+            <Heading as='h3' size='md' id='docker-compose'>
                 Run with Docker compose
             </Heading>
             <ProgramCode
@@ -70,17 +72,34 @@ const Deploy:React.FC = () => {
                 language='yaml'
                 fileName='docker-compose.yaml'
             />
-
             <ProgramCode
                 codeStr={LIVELISTS_CONFIG}
                 language='yaml'
                 fileName='config.yaml'
             />
-
+            <Heading as='h3' size='md' id='networking'>
+                Networking
+            </Heading>
             <ProgramCode
                 codeStr={NGINX_LIVELISTS_PROXY}
                 language='nginx'
                 fileName='default'
+            />
+            <Heading as='h3' size='lg' id='server-sdk'>
+                Server SDK
+            </Heading>
+            <ProgramCode
+                codeStr={CLIENTS_INIT}
+                language='ts'
+                fileName='LiveListsClient.ts'
+            />
+            <Heading as='h3' size='lg' id='client-sdk'>
+                Client SDK
+            </Heading>
+            <ProgramCode
+                codeStr={WEB_CLIENT_CONNECT}
+                language='ts'
+                fileName='LiveListsClient.ts'
             />
         </ContentWithNav>
     );

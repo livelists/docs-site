@@ -2,10 +2,15 @@ import React from 'react';
 
 import { Heading } from '@chakra-ui/react';
 
+import { ADD_PARTICIPANT_TO_CHANNEL } from 'const/codeExamples/server-sdk/ADD_PARTICIPANT_TO_CHANNEL';
+import { CLIENTS_INIT } from 'const/codeExamples/server-sdk/CLIENTS_INIT';
+import { CREATE_CHANNEL } from 'const/codeExamples/server-sdk/CREATE_CHANNEL';
+import { GET_ACCESS_TOKEN } from 'const/codeExamples/server-sdk/GET_ACCESS_TOKEN';
 import { SERVER_SDK_NODE_JS } from 'const/repositories/GITHUB_REPOSITORIES';
 import { LIVE_LISTS_NODE_PACKAGE } from 'const/repositories/NPM_REPOSTORIES';
 import { GitHubLink } from 'uikit/molecules/GitHubLink';
 import { NpmLink } from 'uikit/molecules/NpmLink';
+import { ProgramCode } from 'uikit/molecules/ProgramCode';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
 
 import styles from './NodeJSSDK.module.scss';
@@ -27,6 +32,43 @@ const NodeJSSDK:React.FC = () => {
                     label={LIVE_LISTS_NODE_PACKAGE.label}
                 />
             </div>
+
+            <Heading as='h2' size='lg' id='initialization'>
+                Clients initialization
+            </Heading>
+            <ProgramCode
+                codeStr={CLIENTS_INIT}
+                language='ts'
+                fileName='LiveListsClient.ts'
+            />
+
+            <Heading as='h2' size='lg' id='channel-client'>
+                ChannelClient
+            </Heading>
+            <Heading as='h2' size='md' id='createChannel'>
+                createChannel
+            </Heading>
+            <ProgramCode
+                codeStr={CREATE_CHANNEL}
+                language='ts'
+            />
+            <Heading as='h2' size='lg' id='participant-client'>
+                ParticipantClient
+            </Heading>
+            <Heading as='h2' size='md' id='addParticipantToChannel'>
+                addParticipantToChannel
+            </Heading>
+            <ProgramCode
+                codeStr={ADD_PARTICIPANT_TO_CHANNEL}
+                language='ts'
+            />
+            <Heading as='h2' size='md' id='getAccessToken'>
+                getAccessToken
+            </Heading>
+            <ProgramCode
+                codeStr={GET_ACCESS_TOKEN}
+                language='ts'
+            />
         </ContentWithNav>
     );
 };

@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
 
 import { Spinner } from '@chakra-ui/react';
-import { ConnectionStates, WSConnector } from 'livelists-js-core';
+import {
+    ConnectionState,
+    ConnectionStates,
+    CustomEvent, IInitialInfoUpdated,
+    ILoadMoreMessagesArgs,
+    LocalMessage,
+    WSConnector
+} from 'livelists-js-core';
 import {
     useChannel,
     MessagesList,
@@ -12,6 +19,13 @@ import {
 } from 'livelists-react-sdk';
 
 import styles from './ChatComponent.module.scss';
+import { ISubscribeArgs } from 'livelists-react-sdk/dist/types/customEvents.types';
+import {
+    IFindNotSeenArgs,
+    IInitialScroll,
+    IPublishMessageArgs,
+    IReadMessageArgs
+} from 'livelists-react-sdk/dist/types/channel.types';
 
 interface IProps {
     wsConnector: WSConnector,

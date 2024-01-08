@@ -13,3 +13,18 @@
 .getStartedButton {
   margin-top: 20px;
 }
+
+@media screen and (max-width: 1200px) {
+   .cont {
+     width: 60%;
+     padding-right: 40px;
+   }
+}
+
+@media screen and (max-width: 900px) {
+  .cont {
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 60px;
+  }
+}

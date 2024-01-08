@@ -15,3 +15,27 @@
 .getStartedButton {
   margin-top: 20px;
 }
+
+@media screen and (max-width: 1200px){
+  .image {
+    width: 60%;
+  }
+
+  .textCol {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .rowCont {
+    flex-direction: column-reverse;
+    padding-top: 50px;
+  }
+  .image {
+    width: 100%;
+  }
+
+  .textCol {
+    width: 100%;
+  }
+}

@@ -21,8 +21,6 @@ interface TableOfContentProps extends BoxProps {
 function PageNav(props: TableOfContentProps) {
     const { headings, ...rest } = props;
 
-    console.log(headings);
-
     const activeId = useScrollSpy(
         headings.map(({ id }) => `[id="${id}"]`),
         {

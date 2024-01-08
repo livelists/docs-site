@@ -10,3 +10,17 @@
   justify-content: center;
   align-items: center;
 }
+
+
+@media screen and (max-width: 1200px){
+  .cont {
+    width: 40%;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cont {
+    width: 100%;
+  }
+}

@@ -3,15 +3,12 @@ import React from 'react';
 import { Card, CardBody } from '@chakra-ui/react';
 
 import { Header } from './Header';
-import styles from './HomePage.module.scss';
 import { MessengerBlock } from './MessengerBlock';
 
 const HomePage:React.FC = () => {
     return (
         <Card>
-            <CardBody
-                className={styles.card}
-            >
+            <CardBody>
                 <Header />
                 <MessengerBlock />
             </CardBody>

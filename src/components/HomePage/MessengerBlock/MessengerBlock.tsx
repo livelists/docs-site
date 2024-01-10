@@ -2,10 +2,14 @@ import React from 'react';
 
 import { Button, Text } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { AiOutlineFileText } from 'react-icons/ai';
+
+import { REACT_SDK_PAGE } from 'const/http/CLIENT_URLS';
 
 import MessengerImage from '../../../../public/img/messenger.png';
 import styles from './MessengerBlock.module.scss';
+
 
 const MessengerBlock:React.FC = () => {
 
@@ -26,13 +30,17 @@ const MessengerBlock:React.FC = () => {
                     Using flexible client code you can create a full-fledged chat system integrated into
                     your application
                 </Text>
-                <Button
-                    className={styles.getStartedButton}
-                    rightIcon={<AiOutlineFileText />}
-                    colorScheme='messenger'
+                <Link
+                    href={REACT_SDK_PAGE}
                 >
-                    Read docs
-                </Button>
+                    <Button
+                        className={styles.getStartedButton}
+                        rightIcon={<AiOutlineFileText />}
+                        colorScheme='messenger'
+                    >
+                        Read docs
+                    </Button>
+                </Link>
             </div>
         </div>
     );

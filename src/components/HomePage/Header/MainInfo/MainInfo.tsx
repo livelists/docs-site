@@ -2,6 +2,9 @@ import React from 'react';
 
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Heading, Highlight, Text, Button } from '@chakra-ui/react';
+import Link from 'next/link';
+
+import { DEPLOY_PAGE } from 'const/http/CLIENT_URLS';
 
 import styles from './MainInfo.module.scss';
 
@@ -26,13 +29,17 @@ const MainInfo:React.FC = () => {
                 Use SDK for client and server together with a self-hosted server to speed up
                 real-time application development
             </Text>
-            <Button
-                className={styles.getStartedButton}
-                rightIcon={<ArrowForwardIcon />}
-                colorScheme='messenger'
+            <Link
+                href={DEPLOY_PAGE}
             >
-                Get started
-            </Button>
+                <Button
+                    className={styles.getStartedButton}
+                    rightIcon={<ArrowForwardIcon />}
+                    colorScheme='messenger'
+                >
+                    Get started
+                </Button>
+            </Link>
         </div>
     );
 };

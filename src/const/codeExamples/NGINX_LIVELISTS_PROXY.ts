@@ -1,5 +1,4 @@
-export const NGINX_LIVELISTS_PROXY = `
-server {
+export const NGINX_LIVELISTS_PROXY = `server {
     server_name                 livelists.tech;
 
     location /livelists-ws/ {

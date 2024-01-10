@@ -10,11 +10,11 @@ services:
       - "57217:27017"
 
   livelists-server:
-    image: nikrainev/livelists-server:0.3.0
+    image: nikrainev/livelists-server:latest
     restart: always
     command: livelists-server
     volumes:
       - /home/livelists/config.yaml:/pkg/config/config.yaml
     ports:
-      - "17771:7771"
-      - "17772:7772"`;
+      - "17771:7771" #client port (WebSocket)
+      - "17772:7772" #admin port (TwirpRPC)`;

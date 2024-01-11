@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Text } from '@chakra-ui/react';
+import { Button, Heading, Text } from '@chakra-ui/react';
 
 import { DOCKER_COMPOSE_LISTING } from 'const/codeExamples/DEPLOY_LISTINGS';
 import { LIVELISTS_CONFIG } from 'const/codeExamples/LIVELISTS_CONFIG';
@@ -15,6 +15,10 @@ import { ProgramCode } from 'uikit/molecules/ProgramCode';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
 
 import styles from './Deploy.module.scss';
+import { DEPLOY_PAGE, JS_CORE_PAGE } from '../../../const/http/CLIENT_URLS';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
+import { PagesNavigation } from '../../../uikit/organisms/PagesNavigation';
 
 const Deploy:React.FC = () => {
     return (
@@ -150,7 +154,12 @@ const Deploy:React.FC = () => {
             <ProgramCode
                 codeStr={WEB_CLIENT_CONNECT}
                 language='ts'
-                fileName='LiveListsClient.ts'
+            />
+            <PagesNavigation
+                nextPage={{
+                    label: 'Client-SDK',
+                    url: JS_CORE_PAGE
+                }}
             />
         </ContentWithNav>
     );

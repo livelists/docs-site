@@ -5,6 +5,8 @@ import { Heading } from '@chakra-ui/react';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
 
 import styles from './ComponentsSDK.module.scss';
+import { PagesNavigation } from '../../../../uikit/organisms/PagesNavigation';
+import { DEPLOY_PAGE, REACT_SDK_HOOKS_PAGE, REACT_SDK_PAGE } from '../../../../const/http/CLIENT_URLS';
 
 const ComponentsSDK:React.FC = () => {
     return (
@@ -32,6 +34,16 @@ const ComponentsSDK:React.FC = () => {
             <Heading as='h3' size='lg' id=''>
 
             </Heading>
+            <PagesNavigation
+                prevPage={{
+                    label: 'React-SDK',
+                    url: REACT_SDK_PAGE
+                }}
+                nextPage={{
+                    label: 'Hooks docs',
+                    url: REACT_SDK_HOOKS_PAGE
+                }}
+            />
         </ContentWithNav>
     );
 };

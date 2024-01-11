@@ -9,3 +9,10 @@
   flex-shrink: 1;
   padding-right: 15px;
 }
+
+
+@media screen and (max-width: 1280px){
+  .cont {
+    padding-right: 0;
+  }
+}

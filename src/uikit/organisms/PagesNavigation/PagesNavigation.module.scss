@@ -1,0 +1,43 @@
+.cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.prevCont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nextCont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.prevText {
+  margin-left: 5px;
+}
+
+.nextText {
+  margin-right: 5px;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 550px) {
+  .linkText {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .linkText {
+    font-size: 16px !important;
+  }
+}

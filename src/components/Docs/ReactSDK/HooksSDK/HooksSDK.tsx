@@ -8,7 +8,9 @@ import { USE_SHORT_CHANNEL } from 'const/codeExamples/react-sdk/USE_SHORT_CHANNE
 import { USE_WS_CONNECTION } from 'const/codeExamples/react-sdk/USE_WS_CONNECTION';
 import { ProgramCode } from 'uikit/molecules/ProgramCode';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
+import { PagesNavigation } from 'uikit/organisms/PagesNavigation';
 
+import { NODE_JS_PAGE, REACT_SDK_COMPONENTS_PAGE } from '../../../../const/http/CLIENT_URLS';
 import styles from './HooksSDK.module.scss';
 
 
@@ -50,6 +52,16 @@ const HooksSDK:React.FC = () => {
                 codeStr={USE_WS_CONNECTION}
                 language='typescript'
                 fileName='useWsConnection.ts'
+            />
+            <PagesNavigation
+                prevPage={{
+                    label: 'Components docs',
+                    url: REACT_SDK_COMPONENTS_PAGE
+                }}
+                nextPage={{
+                    label: 'Node-JS SDK',
+                    url: NODE_JS_PAGE
+                }}
             />
         </ContentWithNav>
     );

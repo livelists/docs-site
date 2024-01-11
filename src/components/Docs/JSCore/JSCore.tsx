@@ -7,7 +7,9 @@ import { LIVE_LISTS_JS_CORE_PACKAGE } from 'const/repositories/NPM_REPOSTORIES';
 import { GitHubLink } from 'uikit/molecules/GitHubLink';
 import { NpmLink } from 'uikit/molecules/NpmLink';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
+import { PagesNavigation } from 'uikit/organisms/PagesNavigation';
 
+import { DEPLOY_PAGE, REACT_SDK_PAGE } from '../../../const/http/CLIENT_URLS';
 import styles from './JSCore.module.scss';
 
 const JSCore:React.FC = () => {
@@ -26,6 +28,16 @@ const JSCore:React.FC = () => {
                     label={LIVE_LISTS_JS_CORE_PACKAGE.label}
                 />
             </div>
+            <PagesNavigation
+                prevPage={{
+                    label: 'Deploy',
+                    url: DEPLOY_PAGE
+                }}
+                nextPage={{
+                    label: 'React-SDK',
+                    url: REACT_SDK_PAGE
+                }}
+            />
         </ContentWithNav>
     );
 };

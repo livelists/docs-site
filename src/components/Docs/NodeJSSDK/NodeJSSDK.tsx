@@ -6,12 +6,14 @@ import { ADD_PARTICIPANT_TO_CHANNEL } from 'const/codeExamples/server-sdk/ADD_PA
 import { CLIENTS_INIT } from 'const/codeExamples/server-sdk/CLIENTS_INIT';
 import { CREATE_CHANNEL } from 'const/codeExamples/server-sdk/CREATE_CHANNEL';
 import { GET_ACCESS_TOKEN } from 'const/codeExamples/server-sdk/GET_ACCESS_TOKEN';
+import { REACT_SDK_HOOKS_PAGE } from 'const/http/CLIENT_URLS';
 import { SERVER_SDK_NODE_JS } from 'const/repositories/GITHUB_REPOSITORIES';
 import { LIVE_LISTS_NODE_PACKAGE } from 'const/repositories/NPM_REPOSTORIES';
 import { GitHubLink } from 'uikit/molecules/GitHubLink';
 import { NpmLink } from 'uikit/molecules/NpmLink';
 import { ProgramCode } from 'uikit/molecules/ProgramCode';
 import { ContentWithNav } from 'uikit/organisms/ContentWithNav';
+import { PagesNavigation } from 'uikit/organisms/PagesNavigation';
 
 import styles from './NodeJSSDK.module.scss';
 
@@ -68,6 +70,12 @@ const NodeJSSDK:React.FC = () => {
             <ProgramCode
                 codeStr={GET_ACCESS_TOKEN}
                 language='ts'
+            />
+            <PagesNavigation
+                prevPage={{
+                    label: 'Hooks docs',
+                    url: REACT_SDK_HOOKS_PAGE
+                }}
             />
         </ContentWithNav>
     );

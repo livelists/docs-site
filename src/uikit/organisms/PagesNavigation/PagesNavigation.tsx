@@ -38,7 +38,7 @@ const PagesNavigation:React.FC<IProps> = ({
                                 className={styles.linkText}
                             >
                                 <ChevronLeftIcon />
-                                {prevPage.label}
+                                <>{prevPage.label}</>
                             </Text>
                         </Link>
                     </>
@@ -59,7 +59,7 @@ const PagesNavigation:React.FC<IProps> = ({
                                 fontSize={24}
                                 className={styles.linkText}
                             >
-                                {nextPage.label}
+                                <>{nextPage.label}</>
                                 <ChevronRightIcon />
                             </Text>
                         </Link>

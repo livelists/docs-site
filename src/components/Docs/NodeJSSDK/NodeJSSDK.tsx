@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 
 import { ADD_PARTICIPANT_TO_CHANNEL } from 'const/codeExamples/server-sdk/ADD_PARTICIPANT_TO_CHANNEL';
 import { CLIENTS_INIT } from 'const/codeExamples/server-sdk/CLIENTS_INIT';
@@ -38,6 +38,9 @@ const NodeJSSDK:React.FC = () => {
             <Heading as='h2' size='lg' id='initialization'>
                 Clients initialization
             </Heading>
+            <Text>
+                An example of a class that initializes clients and is exported in a single tone
+            </Text>
             <ProgramCode
                 codeStr={CLIENTS_INIT}
                 language='ts'

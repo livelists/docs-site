@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 
 import {
     JS_CORE_PAGE,
@@ -20,8 +20,21 @@ const ReactSDK:React.FC = () => {
         <ContentWithNav>
             <Heading as='h2' size='2xl' id='top'>
                 SDK for React.js
-            </Heading>
-
+            </Heading><br />
+            <Text>
+                React sdk is is a wrapper over JS-core which allows you to integrate the library into React even faster.
+            </Text><br />
+            <Text>
+                It contains a set of hooks that initialize classes from JS-core library,
+                then subscribes to updates by callback api and return renewing state.
+                Also this hooks return methods from JS-core classes.
+            </Text><br />
+            <Text>
+                Also in this package are the react components. They are designed to receive props from React SDK hooks.
+            </Text> <br />
+            <Text>
+                As a result, you can combine data from hooks and ready-made components, or use data from hooks with your own components
+            </Text>
             <div className={styles.linksRow}>
                 <GitHubLink
                     href={REACT_SDK.url}

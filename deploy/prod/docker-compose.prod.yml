@@ -8,6 +8,7 @@ services:
     restart: always
     ports:
       - "13000:3000"
+      - "180:80"
 
   mongo-livelists:
     image: mongo:6.0.3

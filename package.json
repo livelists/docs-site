@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "engines": {
     "node": ">=16.13"
@@ -42,6 +44,14 @@
     "typescript": "4.8.4"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.13",
+    "@storybook/addon-interactions": "^7.6.13",
+    "@storybook/addon-links": "^7.6.13",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.13",
+    "@storybook/nextjs": "^7.6.13",
+    "@storybook/react": "^7.6.13",
+    "@storybook/test": "^7.6.13",
     "@types/node": "18.11.3",
     "@types/prismjs": "^1.26.3",
     "@types/randomstring": "^1.1.8",
@@ -54,6 +64,13 @@
     "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-react": "7.29.3"
+    "eslint-plugin-react": "7.29.3",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.6.13"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

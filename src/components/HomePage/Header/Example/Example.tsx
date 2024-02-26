@@ -18,7 +18,7 @@ const Example:React.FC<IProps> = ({
         onGetConnection,
         ws,
     } = useWsConnection({
-        url: 'wss://livelists.tech/livelists-ws/',
+        url: 'wss://livelists.org/livelists-ws/',
         accessToken,
     });
     
